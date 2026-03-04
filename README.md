@@ -61,8 +61,3 @@ Machine Learning:
 - Real-time app scanning
 - Browser extension
 - Android integration
-
----
-
-## Author
-Pramit Panda
