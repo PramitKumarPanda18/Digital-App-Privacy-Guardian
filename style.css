@@ -1,0 +1,151 @@
+:root {
+    /* "Smarter" Color Palette */
+    --color-primary-dark: #37306B; /* Deep Indigo */
+    --color-primary: #6040A0; /* Mid Purple */
+    --color-primary-light: #f3e5f5; /* Light Lavender */
+    --color-accent: #E1AA74; /* Warm Gold */
+    --color-accent-light: #fff8e1;
+    
+    --color-success: #388e3c; /* Green */
+    --color-danger: #d32f2f; /* Red */
+    
+    --color-safe-bg: #e8f5e9;
+    --color-safe-border: #c8e6c9;
+    --color-safe-text: #2e7d32;
+    
+    --color-mod-bg: var(--color-accent-light);
+    --color-mod-border: #ffe082;
+    --color-mod-text: #e65100;
+    
+    --color-crit-bg: #ffebee;
+    --color-crit-border: #ffcdd2;
+    --color-crit-text: #c62828;
+}
+
+/* Use Tailwind's default sans-serif font (Inter) */
+body {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    /* New subtle, warm background */
+    background-color: #F8F7FA;
+    background-image: linear-gradient(135deg, #F8F7FA 0%, #F1F1F5 100%);
+}
+
+.guardian-container {
+    background-color: #ffffff;
+    /* New shadow based on primary color */
+    box-shadow: 0 10px 30px rgba(55, 48, 107, 0.1);
+}
+
+/* --- New Button Styles --- */
+.btn {
+    @apply px-5 py-3 rounded-lg font-semibold shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 text-center;
+}
+.btn-primary {
+    background-color: var(--color-primary-dark);
+    color: white;
+    @apply hover:bg-opacity-90 focus:ring-primary-dark;
+}
+.btn-primary-light {
+    background-color: var(--color-primary-light);
+    color: var(--color-primary-dark);
+    @apply hover:bg-purple-100 focus:ring-primary;
+}
+.btn-success {
+    background-color: var(--color-success);
+    color: white;
+    @apply hover:bg-opacity-90 focus:ring-success;
+}
+.btn-danger {
+    background-color: var(--color-danger);
+    color: white;
+    @apply hover:bg-opacity-90 focus:ring-danger;
+}
+.btn-warning {
+    background-color: var(--color-accent);
+    color: var(--color-primary-dark);
+    @apply hover:bg-opacity-90 focus:ring-accent;
+}
+.btn-skip {
+     background-color: #e0e0e0;
+     color: #424242;
+     @apply hover:bg-gray-300 focus:ring-gray-400;
+}
+
+/* --- Larger List Buttons --- */
+#mode-list .btn, #app-list .btn {
+    @apply py-4 text-lg font-bold;
+}
+
+/* --- Report Box Styles --- */
+.report-section {
+    @apply p-4 border-l-4 rounded-r-md my-4;
+}
+.report-status-safe {
+    background-color: var(--color-safe-bg);
+    border-color: var(--color-safe-border);
+    color: var(--color-safe-text);
+}
+.report-status-moderate {
+    background-color: var(--color-mod-bg);
+    border-color: var(--color-mod-border);
+    color: var(--color-mod-text);
+}
+.report-status-critical {
+    background-color: var(--color-crit-bg);
+    border-color: var(--color-crit-border);
+    color: var(--color-crit-text);
+}
+.report-status-critical h4 {
+    color: var(--color-crit-text);
+    @apply font-bold text-lg mb-2 border-b border-red-200 pb-2;
+}
+.report-prediction {
+    background-color: #f8f8f8;
+    border-color: #e0e0e0;
+    color: #333;
+    @apply text-center;
+}
+
+/* --- Simulation Log Styles --- */
+.sim-log {
+    @apply p-3 mt-3 rounded-md border text-sm;
+    background-color: #111827; /* Near black */
+    border-color: #374151; /* Gray-800 */
+    color: #d1d5db; /* Gray-300 */
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+.sim-log-success {
+    color: #34d399; /* Emerald-400 */
+}
+.sim-log-warning {
+     color: #fcd34d; /* Amber-300 */
+}
+.sim-log-danger {
+    color: #f87171; /* Red-400 */
+}
+.sim-log-critical {
+    color: #f472b6; /* Pink-400 */
+    @apply font-bold;
+}
+
+/* --- Other Styles --- */
+.new-perm-tag {
+    color: var(--color-mod-text);
+    background-color: var(--color-accent-light);
+    border: 1px solid var(--color-mod-border);
+    @apply font-bold text-xs uppercase px-2 py-0.5 rounded-full ml-2;
+}
+.hidden {
+    display: none !important;
+}
+
+/* Revocation Checkbox */
+#revocation-list label {
+    @apply block p-3 rounded-md cursor-pointer transition-colors duration-150 hover:bg-gray-100;
+}
+#revocation-list input {
+    @apply mr-2;
+    /* New accent color for checkbox */
+    accent-color: var(--color-primary);
+}
+
